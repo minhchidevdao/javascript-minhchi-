@@ -1,10 +1,12 @@
-let a = 5;
-let b = 7;
-let c = 10;
-let d = "8";
+function sum(a, b){
+    return a+b;
+}
 
+let c = sum(10,12)
+console.log('sum a+b = ', c);
 
-console.log(a+b);
-console.log(a+c);
-console.log(a+d);
+ let ftsum =(x,y) => {
+    return x+y;
 
+}
+console.log(ftsum(2,3))
