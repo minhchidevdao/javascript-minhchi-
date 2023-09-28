@@ -7,6 +7,9 @@ let arr =[
     { name: 'thanh long', age: 17 }
 ]
 
+// hàm filter dùng để tìm lọc các phần tử thỏa mãn điều kiện
+// hàm find dùng để tìm lọc và trả về phần tử đầu tiên thỏa mãn điều kiện
+
 let filter = arr.find((item, index) =>{
     // console.log()
     return item && item.age === 20;
