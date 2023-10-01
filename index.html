@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minh Chi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minh Chi</title>
 </head>
-<script src="sort/sort.js">
+<script>
+  let request = new XMLHttpRequest();
+
+  request.onreadystatechange = function () {
+    if (this.readyState == 4){
+      console.log('>>> check res: ', request);
+    }
+  }
+
+  request.open("GET", "", true);
+  request.send();
+
+
 </script>
+
 <body>
   <div>
     <h1>Hello anh em viet Nam</h1>
   </div>
 </body>
+
 </html>
