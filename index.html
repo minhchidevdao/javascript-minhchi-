@@ -7,16 +7,49 @@
   <title>Minh Chi</title>
 </head>
 <script>
-  let request = new XMLHttpRequest();
 
-  request.onreadystatechange = function () {
-    if (this.readyState == 4){
-      console.log('>>> check res: ', request);
+
+
+  
+
+
+
+  const getData = (callback) => {
+    let request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+      if (this.readyState === 4 && request.status === 200) {
+        const data = JSON.parse(request.responseText);
+        callback(undefined, data);
+      }
+
+      if(this.readyState === 4 && request.status != 200) {
+        callback('something wrongs', undefined);
+      }
+
     }
+
+    request.open("GET", "data.json", true);
+    request.send();
   }
 
-  request.open("GET", "", true);
-  request.send();
+getData(callback);
+
+
+
+const getNewData = async ()=>{
+  let response = await fetch('data.json');
+  let data = await response.json();
+  console.log('get data', data)
+
+}
+
+//promiseExp().then(data => {
+ // console.log(data)
+//})
+//.catch(error =>{
+ // console.log(error)
+//})
 
 
 </script>
