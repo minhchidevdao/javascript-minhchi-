@@ -1,13 +1,18 @@
-console.log('Object');
+let promise = new Promise(
+    function(resolve, reject){
+        // logic
+        // Thành công: resolve()
+        // thất bại: reject()
+    }
+)
 
-// key: value
-let obj = {
-    name: 'minh chi', address: 'Gia lai',
-    email: 'minhchi@gmail.com', gender: 'Nam'
-};
-
-let b = 'name';
-obj[b] = 'Ala'
-
-console.log('what your name ?',`my name's:`,obj['name'])
-console.log(`where are your from ?`,`Im from: `,obj.address)
+promise 
+    .then(function(){
+        console.log('succesully');
+    })
+    .catch(function(){
+        console.log('error');
+    })
+    .finally( () => {
+        console.log('done');
+    })
